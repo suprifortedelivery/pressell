@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Método Analítico - Acesso Restrito</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #1A1A1A;
+      --neon-green: #CCFF00;
+      --neon-cyan: #00FFFF;
+      --text-primary: #FFFFFF;
+    }
+    
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .glow-green {
+      box-shadow: 0 0 20px rgba(204, 255, 0, 0.4), 0 0 40px rgba(204, 255, 0, 0.2);
+    }
+    
+    .glow-green:hover {
+      box-shadow: 0 0 30px rgba(204, 255, 0, 0.6), 0 0 60px rgba(204, 255, 0, 0.3);
+    }
+    
+    .text-glow-green {
+      text-shadow: 0 0 10px rgba(204, 255, 0, 0.5);
+    }
+    
+    .text-glow-cyan {
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    
+    .border-glow-cyan {
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), inset 0 0 15px rgba(0, 255, 255, 0.05);
+    }
+    
+    .grid-bg {
+      background-image: 
+        linear-gradient(rgba(204, 255, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(204, 255, 0, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    .animate-pulse-slow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-4px);
+      border-color: var(--neon-cyan);
+    }
+
+    #app-wrapper {
+      pointer-events: auto;
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app-wrapper" class="w-full h-full overflow-auto bg-black grid-bg">
+   <!-- Header Badge -->
+   <header class="pt-8 pb-4 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-gray-800 bg-gray-900/50 backdrop-blur">
+      <span class="w-2 h-2 rounded-full bg-[#CCFF00] animate-pulse-slow"></span> <span class="mono text-xs tracking-[0.3em] text-gray-400 uppercase">Acesso Restrito</span>
+     </div>
+    </div>
+   </header><!-- Hero Section -->
+   <section class="px-4 py-8">
+    <div class="max-w-4xl mx-auto text-center">
+     <div class="mb-8 p-4 rounded-lg bg-gray-900/60 border border-[#CCFF00]/30 backdrop-blur">
+      <p class="text-sm md:text-base text-gray-200 font-medium">⚠️ Para ativar todos os botões da página, <span class="text-[#CCFF00]">toque ou clique duas vezes</span> na tela.<br>
+       Isso é necessário em alguns dispositivos para liberar o acesso.</p>
+     </div>
+     <h1 id="headline" class="text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8">A Comunidade de Análise Esportiva Onde as <span class="text-[#CCFF00] text-glow-green">Decisões São Baseadas em Dados,</span> <span class="text-[#CCFF00] text-glow-green">Não em Impulso</span></h1><!-- Subheadline -->
+     <p class="text-gray-400 text-lg md:text-xl mb-8 leading-relaxed max-w-2xl mx-auto">Existe um processo organizado de análise com base em dados e acompanhamento das partidas. No grupo, você acompanha tudo explicado de forma simples, sem precisar decidir apenas no impulso ou no achismo.</p><!-- Hero Image Placeholder -->
+     <div class="relative max-w-2xl mx-auto mb-8">
+      <div class="aspect-video rounded-xl overflow-hidden border border-gray-800 bg-gradient-to-br from-gray-900 to-black"><img src="https://i.imgur.com/60E11wq.png" alt="Análises Compartilhadas no Grupo" loading="lazy" class="w-full h-full object-cover" onerror="console.error('Imagem falhou ao carregar:', this.src); this.style.background='linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)'; this.alt='Análises indisponíveis';"> <!-- Glow overlay -->
+       <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+      </div><!-- Decorative corners -->
+      <div class="absolute -top-1 -left-1 w-4 h-4 border-l-2 border-t-2 border-[#CCFF00]"></div>
+      <div class="absolute -top-1 -right-1 w-4 h-4 border-r-2 border-t-2 border-[#CCFF00]"></div>
+      <div class="absolute -bottom-1 -left-1 w-4 h-4 border-l-2 border-b-2 border-[#CCFF00]"></div>
+      <div class="absolute -bottom-1 -right-1 w-4 h-4 border-r-2 border-b-2 border-[#CCFF00]"></div>
+     </div><!-- CTA Button 1 --> <a href="https://t.me/+LtWNfNmtUbdiNjMx" target="_blank" rel="noopener noreferrer" id="cta-button" class="inline-block px-8 py-4 bg-[#CCFF00] text-black font-bold text-lg rounded-lg glow-green transition-all duration-300 hover:scale-105 hover:bg-[#d4ff33]"> ENTRAR NO GRUPO GRATUITO </a>
+     <p class="mt-4 text-gray-500 text-sm mono">🔒 Acesso gratuito • Sem compromisso</p>
+    </div>
+   </section><!-- Contrast Block -->
+   <section class="px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+     <div class="grid md:grid-cols-2 gap-6">
+      <!-- Left: Problems -->
+      <div class="p-6 rounded-xl bg-gradient-to-br from-red-950/30 to-gray-900/50 border border-red-900/30">
+       <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-lg bg-red-900/50 flex items-center justify-center">
+         <svg class="w-5 h-5 text-red-400" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+         </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-red-400">O Que NÃO Funciona</h3>
+       </div>
+       <ul class="space-y-4">
+        <li class="flex items-start gap-3"><span class="text-red-500 mt-1">✗</span>
+         <div>
+          <span class="font-medium text-gray-300">Adivinhação</span>
+          <p class="text-sm text-gray-500">Tomar decisões sem análise ou sem acompanhamento dos dados</p>
+         </div></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 mt-1">✗</span>
+         <div>
+          <span class="font-medium text-gray-300">Emoção</span>
+          <p class="text-sm text-gray-500">Tomar decisões na emoção sem ter um critério claro</p>
+         </div></li>
+        <li class="flex items-start gap-3"><span class="text-red-500 mt-1">✗</span>
+         <div>
+          <span class="font-medium text-gray-300">Sorte</span>
+          <p class="text-sm text-gray-500">Decisões sem base em dados, sem histórico e sem qualquer critério de análise</p>
+         </div></li>
+       </ul>
+      </div><!-- Right: Solution -->
+      <div class="p-6 rounded-xl bg-gray-900/50 border border-[#00FFFF]/40 border-glow-cyan">
+       <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-lg bg-[#00FFFF]/20 flex items-center justify-center">
+         <svg class="w-5 h-5 text-[#00FFFF]" fill="none" viewbox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+         </svg>
+        </div>
+        <h3 class="text-lg font-semibold text-[#00FFFF] text-glow-cyan">O Que Funciona</h3>
+       </div>
+       <ul class="space-y-4">
+        <li class="flex items-start gap-3"><span class="text-[#CCFF00] mt-1">✓</span>
+         <div>
+          <span class="font-medium text-gray-200">Lógica</span>
+          <p class="text-sm text-gray-400">Análises baseadas em dados e informações reais dos jogos</p>
+         </div></li>
+        <li class="flex items-start gap-3"><span class="text-[#CCFF00] mt-1">✓</span>
+         <div>
+          <span class="font-medium text-gray-200">Processo</span>
+          <p class="text-sm text-gray-400">Processo organizado que qualquer pessoa consegue entender e acompanhar</p>
+         </div></li>
+        <li class="flex items-start gap-3"><span class="text-[#CCFF00] mt-1">✓</span>
+         <div>
+          <span class="font-medium text-gray-200">Execução</span>
+          <p class="text-sm text-gray-400">Decisões feitas com mais critério e menos impulso</p>
+         </div></li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Process Cards -->
+   <section class="px-4 py-12">
+    <div class="max-w-4xl mx-auto">
+     <div class="text-center mb-10">
+      <span class="mono text-xs tracking-[0.3em] text-[#00FFFF] uppercase">Como Funciona</span>
+      <h2 class="text-2xl md:text-3xl font-bold mt-2">Simples de entender. Fácil de acompanhar.</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6">
+      <!-- Card 1 -->
+      <div class="p-6 rounded-xl bg-[#1A1A1A] border border-gray-800 card-hover">
+       <div class="mono text-[#00FFFF] text-glow-cyan text-sm font-medium mb-3">
+        01. IDENTIFICAÇÃO
+       </div>
+       <h3 class="text-xl font-semibold mb-3">Análise de Dados</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">O grupo acompanha informações e estatísticas dos jogos para identificar situações que normalmente passam despercebidas.</p>
+       <div class="mt-4 pt-4 border-t border-gray-800">
+        <span class="text-xs text-gray-500 mono">⚡ Você vê tudo explicado passo a passo dentro do grupo</span>
+       </div>
+      </div><!-- Card 2 -->
+      <div class="p-6 rounded-xl bg-[#1A1A1A] border border-gray-800 card-hover">
+       <div class="mono text-[#00FFFF] text-glow-cyan text-sm font-medium mb-3">
+        02. ENVIO
+       </div>
+       <h3 class="text-xl font-semibold mb-3">Direto no Celular</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">As análises são enviadas no grupo com explicação simples, para qualquer pessoa conseguir acompanhar.</p>
+       <div class="mt-4 pt-4 border-t border-gray-800">
+        <span class="text-xs text-gray-500 mono">📱 Você acompanha pelo celular</span>
+       </div>
+      </div><!-- Card 3 -->
+      <div class="p-6 rounded-xl bg-[#1A1A1A] border border-gray-800 card-hover">
+       <div class="mono text-[#00FFFF] text-glow-cyan text-sm font-medium mb-3">
+        03. ACOMPANHAMENTO
+       </div>
+       <h3 class="text-xl font-semibold mb-3">Como acompanhar a análise</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">O processo é explicado para que você compreenda a lógica por trás de cada análise apresentada.</p>
+       <div class="mt-4 pt-4 border-t border-gray-800">
+        <span class="text-xs text-gray-500 mono">🎯 Baseado em dados</span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Community Section -->
+   <section class="px-4 py-12 bg-gradient-to-b from-black to-gray-900/30">
+    <div class="max-w-4xl mx-auto text-center">
+     <span class="mono text-xs tracking-[0.3em] text-[#00FFFF] uppercase">Exclusividade</span>
+     <h2 class="text-2xl md:text-3xl font-bold mt-2 mb-6">Comunidade Privada</h2>
+     <p class="text-gray-300 text-lg mb-4 leading-relaxed">O grupo é fechado para manter a organização das análises. O acesso gratuito permite entrar, acompanhar e entender como funciona o processo de análise dentro da comunidade.</p>
+    </div>
+   </section><!-- Final CTA -->
+   <section class="px-4 py-16">
+    <div class="max-w-2xl mx-auto text-center">
+     <div class="p-8 rounded-2xl bg-gradient-to-b from-gray-900 to-black border border-gray-800 relative overflow-hidden">
+      <!-- Background glow -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 bg-[#CCFF00]/10 blur-[100px] rounded-full"></div>
+      <div class="relative">
+       <span class="mono text-xs tracking-[0.3em] text-gray-500 uppercase">Acesso Disponível</span>
+       <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-4">Entre Agora no Grupo Gratuito</h2>
+       <p class="text-gray-400 mb-8">Entre no grupo gratuito e acompanhe como as análises são feitas de forma organizada dentro da comunidade.</p><a href="https://t.me/+LtWNfNmtUbdiNjMx" target="_blank" rel="noopener noreferrer" style="pointer-events: all !important; position: relative; z-index: 999999 !important;" class="inline-block px-10 py-5 bg-[#CCFF00] text-black font-bold text-lg rounded-lg glow-green transition-all duration-300 hover:scale-105 hover:bg-[#d4ff33]"> ENTRAR NO GRUPO GRATUITO → </a>
+       <div class="flex items-center justify-center gap-6 mt-6 text-sm text-gray-500">
+        <span class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-[#CCFF00]" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a. 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg> Gratuito </span> <span class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-[#CCFF00]" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a. 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg> Sem compromisso </span> <span class="flex items-center gap-2">
+         <svg class="w-4 h-4 text-[#CCFF00]" fill="currentColor" viewbox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a. 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+         </svg> Acesso gratuito por tempo limitado </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="px-4 py-8 bg-black border-t border-gray-900">
+    <div class="max-w-4xl mx-auto">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+      <div class="flex items-center gap-6 text-sm">
+       <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors">Termos de Uso</a> <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors">Política de Privacidade</a> <a href="#" class="text-gray-500 hover:text-gray-300 transition-colors">Contato</a>
+      </div>
+      <div class="mono text-xs text-gray-600">
+       © 2024 Método Analítico
+      </div>
+     </div>
+     <div class="pt-6 border-t border-gray-900">
+      <p id="disclaimer" class="text-xs text-gray-600 text-center leading-relaxed max-w-3xl mx-auto">⚠️ <strong>Aviso Legal:</strong> Este conteúdo tem caráter informativo e educacional. Não garantimos resultados e cada pessoa deve tomar suas próprias decisões.</p>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9de53a56365b577d',t:'MTc3Mzg0NzI5NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
