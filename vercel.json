@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "src": "/v2",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/v2/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
